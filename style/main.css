@@ -37,6 +37,10 @@ li {
     list-style: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 /* header */
 .main-header  {
     width: 100%;
@@ -80,7 +84,7 @@ li {
     align-items: center;
     gap: 1.5rem;
 }
-
+/* button filter */
 .extensions-filter {
     display: flex;
     justify-content: space-around;
@@ -88,7 +92,7 @@ li {
     gap: 1rem;
 }
 
-.extensions-filter>li {
+.filter-btn {
     font-size: 1.2rem;
     padding: 0.5rem 1rem;
     background-color: var(--neutral-700);
@@ -96,6 +100,23 @@ li {
     min-width: 4rem;
     border: 1px solid var(--neutral-600);
     text-align: center;
+    color: var(--neutral-0);
+}
+
+.filter-btn:hover {
+    background-color: var(--neutral-600);
+}
+
+.active {
+    background-color: var(--red-400);
+    border: var(--red-400);
+    color: var(--neutral-900);
+}
+
+.active:hover {
+    background-color: var(--red-400);
+    border: var(--red-400);
+    color: var(--neutral-900);
 }
 
 /* Extensions list */
@@ -150,6 +171,7 @@ li {
     }
 
         .ext-remove {
+            position: relative;
             background-color: var(--neutral-700);
             border: 1px solid var(--neutral-600);
             width: 6rem;
@@ -157,6 +179,32 @@ li {
             border-radius: 2rem; 
             color: var(--neutral-0);
         }
+        /* button focus */
+        button {
+            position: relative;
+        }
+
+        button::after {
+            content: "";
+            position: absolute;
+            top: -3px; left: -3px; right: -3px; bottom: -3px;
+            border-radius: 30px;
+            border: 1px solid transparent;
+        }
+
+        .themes-toggle::after {
+            border-radius: 0.5rem;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button:focus::after {
+            border: 1px solid var(--red-500);
+        }
+
+
     
     
 
@@ -198,12 +246,19 @@ li {
     transition: .4s;
     }
 
+    .slider::after {
+        content: "";
+        position: absolute;
+        top: -3px; left: -3px; right: -3px; bottom: -3px;
+        border: 1px solid transparent;
+    }
+
     input:checked + .slider {
     background-color: var(--red-400);
     }
 
-    input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    input:focus + .slider::after {
+    border: 1px solid var(--red-500);
     }
 
     input:checked + .slider:before {
@@ -217,6 +272,10 @@ li {
     border-radius: 34px;
     }
 
+    .slider::after {
+    border-radius: 34px;
+    }
+
     .slider.round:before {
     border-radius: 50%;
     }
@@ -226,7 +285,7 @@ li {
     @media screen and (min-width: 768px) {
         /* body */
         body {
-            padding: 1rem 8rem;
+            padding: 1rem 15rem;
         }
         /* header */
         .main-header {
