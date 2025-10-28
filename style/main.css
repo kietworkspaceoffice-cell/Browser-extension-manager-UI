@@ -74,6 +74,14 @@ button {
     align-items: center;
 }
 
+    .sun-icon {
+        display: none;
+    }
+
+    .moon-icon {
+        display: none;
+    }
+
 /* extensions title */
 .extensions-title {
     width: 100%;
@@ -318,4 +326,35 @@ button {
             grid-template-columns: repeat(3, 1fr);
             column-gap: 1rem;
         }
+    }
+
+    /* theme button */
+    .isActive {
+        display: block;
+    }
+
+    /* change theme */
+    .day-body {
+        background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    }
+
+    .day-title {
+        color: var(--neutral-900);
+    }
+
+    .day-disc {
+        color: var(--neutral-700);
+    }
+
+    .day-theme {
+        background-color: var(--neutral-300);
+    }
+    .day-time {
+        fill: var(--neutral-900);
+    }
+
+    .day-fill {
+        background-color: var(--neutral-0);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        color: var(--neutral-900);
     }
