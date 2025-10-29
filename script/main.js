@@ -49,6 +49,7 @@ fetch('./data/data.json')
             ext.isActive = changeActive.checked;
         })
       })
+
     }
     
     // render lại toàn bộ
@@ -85,24 +86,16 @@ const themeIcon = document.getElementById('theme-icon');
 const sunIcon = document.querySelector('.sun-icon');
 const moonIcon = document.querySelector('.moon-icon');
 
-const textLogo = document.querySelector('.text-logo');
-const mainHeader = document.querySelector('.main-header');
 
 const bodyMain = document.querySelector('body');
 
 
 themeToggle.addEventListener('click', () => {
-  const extCart = document.querySelectorAll('.ext-cart');
-  const extRemove = document.querySelectorAll('.ext-remove');
-
   sunIcon.classList.toggle('isActive');
   moonIcon.classList.toggle('isActive');
   
   // theme change
-  bodyMain.classList.toggle('day-body');
+  bodyMain.classList.toggle('day-mode');
   themeToggle.classList.toggle('day-theme');
-  textLogo.classList.toggle('day-time');
-  mainHeader.classList.toggle('day-fill');
-  extCart.forEach(eC => eC.classList.toggle('day-fill'));
-  extRemove.forEach(eR => eR.classList.toggle('day-fill'));
+  
 });

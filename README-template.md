@@ -65,7 +65,18 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+  # Important
+  - Change theme by add a class to body like: 
+  ```css
+    body.day-mode .ext-cart,
+    body.day-mode .ext-remove,
+    body.day-mode .main-header {
+        background-color: var(--neutral-0);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        color: var(--neutral-900);
+    }
+    ```
+  - and toggle that class to body tag.
 
 To see how you can add code snippets, see below:
 

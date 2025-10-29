@@ -334,27 +334,43 @@ button {
     }
 
     /* change theme */
-    .day-body {
+    body.day-mode {
         background: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
     }
 
-    .day-title {
+    body.day-mode h1 {
         color: var(--neutral-900);
     }
 
-    .day-disc {
-        color: var(--neutral-700);
-    }
-
-    .day-theme {
+    
+    body.day-mode .themes-toggle {
         background-color: var(--neutral-300);
     }
-    .day-time {
+
+    body.day-mode .text-logo {
         fill: var(--neutral-900);
     }
-
-    .day-fill {
+    
+    body.day-mode .ext-cart,
+    body.day-mode .ext-remove,
+    body.day-mode .main-header,
+    body.day-mode .filter-btn {
         background-color: var(--neutral-0);
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         color: var(--neutral-900);
+    }
+
+    body.day-mode .filter-btn:hover {
+    background-color: var(--neutral-300);
+    }
+
+    body.day-mode .active,
+    body.day-mode .active:hover {
+    background-color: var(--red-400);
+    border: var(--red-400);
+    color: var(--neutral-900);
+    }
+    
+    body.day-mode p {
+        color: var(--neutral-700);
     }
